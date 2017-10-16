@@ -2,12 +2,16 @@ package me.chanjar.weixin.common.exception;
 
 import me.chanjar.weixin.common.bean.result.WxError;
 
-public class WxErrorException extends Exception {
+public class WxErrorException extends Exception implements Serializable {
 
   private static final long serialVersionUID = -6357149550353160810L;
 
   private WxError error;
 
+  public TestException(){
+        super();
+    }
+  
   public WxErrorException(WxError error) {
     super(error.toString());
     this.error = error;
